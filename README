@@ -1,0 +1,26 @@
+# Compile and Upload to pinguino-32 boards ( PIC32MX440F256H )
+# Linux only version, tested on Fedora 16, Ubuntu 11.10
+
+# Prerequisites
+svn checkout http://pinguino32.googlecode.com/svn/trunk/ pinguino32-read-only
+
+# configuration
+Makefile:
+  change P32_PATH=.. to point to the checked out "pinguino32-trunk" 
+
+# compile
+  make
+
+# clean
+  make clean
+
+# upload
+  sudo make upload
+
+# user.c
+  put your code here ( its included in top of main32.c )
+
+# examples
+  They are in the P32_TRUNK/examples but be careful the syntax of the *.pde 
+  files gets translated to slightly different named c functions.
+  Browse the P32_TRUNK/p32/lib/*.pdl32 files to see the mapping.
